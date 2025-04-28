@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- rezponsywność -->
+
+<title>Kosmetyk</title>
+
+<!--Czcionka z google fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200&display=swap" rel="stylesheet">
+
+    <link rel ="stylesheet" href="styl.css" type = "text/css" />
+    <script src="Skrypt.js" defer></script>
+</head> 
+<body>
+    <div id="strzalka">&#129145</div>
+    <div id="wozek"> <!--Ikonka wózka-->
+        <img style="height: 50px; width: 50px; margin:5px" src="https://img.icons8.com/?size=100&id=9550&format=png&color=FFFFFF" alt="Przycisk wózka inwalidzkiego"> 
+    </div> 
+    <div id="opcje"> <!--Menu Dostępności-->
+            <button id="closeO" style="float: left; width: 20px;  height: 20px; margin-left: 30px; padding-top: 3px; border: none;">
+                <img src="Foto/zamknij.png"></button>
+            <b style="float: left; margin-left: 10px;">Zmień kontrast</b>
+
+            <button id="odwroc"><img src="Foto/odwroc.png">
+                Odwróć kolory
+            </button>
+            <button id="kontrast"><img src="Foto/ciemny.png">
+                 Ciemny kontrast
+            </button>
+            <button id="lowS"><img src="Foto/20.png">
+                Niskie nasycenie
+            </button>
+            <button id="higS"><img src="Foto/80.png">
+                Wysokie nasycenie
+            </button>
+            <button id="BW" style=" border-bottom: black dotted 2px;">
+                <img src="Foto/czarno.png" style="height: 20px; width: 20px;">
+                Monochromatyczny
+            </button>
+
+            <b>Zmiana czcionki</b> <!--Zmiana czcionki-->
+            <div id="czcionka">
+                <button id="zmniejsz">-</button>
+                <p style="border: none; float: left; width: 40px;">Aa</p>
+                <button id="zwieksz">+</button>
+                <div id="procent">
+                    <span>100%</span>
+                </div>
+                
+            </div>
+            <button id="reset"><img src="Foto/nic.png"><!--Reset wszystkich ustawień-->
+                Reset ustawień
+            </button>
+    </div>
+    <div style="clear:both"></div>
+<div id="zawartosc" class=""> <!-- Glowna zawartosc aby ustawiac odpowiuednie wartosci dla strony-->
+    <div id="hamburger">
+        <div class="prostokat" style="top: 0;"></div>
+        <div class="prostokat" style="top: 49%;"></div>
+        <div class="prostokat" style="top: 100%;"></div>
+    </div>
+    <div id="pasek"> <!--Nawigacja na górze strony-->
+        <div id="menu">
+            <ul>
+                <li><a href="oferta.html">Oferta</a></li>
+                <li><a href="historia.html">O nas</a></li>
+                <li><a href="gra.html">Relaks</a></li>
+                <li  class="aktywne">Kontakt</li>
+            </ul>
+        </div>  
+    </div>
+    <div id="naglowek"> <!--Kwiatki z logiem-->
+        <div id="Logo"><a href="index.html"><img  src="Foto/kosmetyk.png" alt="Logo salonu Kosmetyk"></a></div>
+    </div>
+    
+    <div id="srodek"> <!--Główna zawartość strony-->
+        <div id="kontakt">
+            <h1>Skontaktuj sie z nami</h1>
+            <p>Masz do nas pytania napisz do nas poniższym formularzem</p>
+            <form id="formularzKontakt" action="kontakt.html">
+                <label>Wybierz sprawę w jakiej piszesz</label>
+                <select id="sprawy">
+                    <option>skarga</option>
+                    <option>praca</option>
+                    <option>inne</option>
+                </select><br>
+                <fieldset>
+                    <legend>Twoje Dane</legend>
+                    <label>Imie: <input type="text" id="imie"></label><br><br>
+                    <label>Nazwisko: <input type="text" id="nazwisko"></label><br><br>
+                    <label>Mail: <input type="text" id="mail" ></label><br><br>
+                    <i>Podajac swoje dane zgadzasz się na wykorzystanie tych dancyh w celu kontaktowania się</i>
+                </fieldset>
+                <label for="subject">Treść</label><br>
+                <textarea id="subject" name="subject" placeholder="Tutaj napisz wiadomośc do nas" style="height:200px" required></textarea><br>
+
+                <input type="Reset" value="Zresetuj" class="przyciskForm">
+                <input type="submit" value="Wyśilij" class="przyciskForm">
+                
+              </form>
+        </div>
+    </div>
+    <footer> <!--Stopka strony-->
+        <div id="footL"> <!--Fragment mapy w stopce-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.4010783578372!2d21.211254224181168!3d52.341324054123056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471edbdc5cdd69d3%3A0xe43b1f59f342b5c3!2sHarmonijka%20Koby%C5%82ka!5e0!3m2!1spl!2spl!4v1717709289470!5m2!1spl!2spl" width="95%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+        <div id="footR"> <!--Linki do stron takie same jak na górze-->
+            <h2>Salon kosmetyczny "Kosmetyk"</h2>
+            <div id="footGuziki">
+                <button><a href="oferta.html">Oferta</a></button>
+                <button><a href="historia.html">O nas</a></button><br>
+                <button><a href="gra.html">Relaks</a></button>
+                <button><a href="#kontakt">Kontakt</a></button><br>
+            </div>
+            
+            <i>Photos, illustration an icons by Icons8</i>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="uciekajaceOwoce"> <!--Przestrzeń dla animacji uciekających owców-->
+            <img class="owoc" src="Foto/banan.png" style="height: 20px; width: 20px;" alt="plasterek banana">
+            <img class="owoc" src="Foto/ogorek.png" style="height: 30px; width: 30px;" alt="plasterek ogórka">
+            <img class="owoc" src="Foto/kiwi.png" style="height: 35px; width: 35px;" alt="plasterek kiiwi">
+            <img class="owoc" src="Foto/pomarancza.png" style="height: 40px; width: 40px;" alt="plasterek pomarańczy"> 
+        </div>
+        
+    </footer>
+    
+</div>
+    
+</body>
+</html>

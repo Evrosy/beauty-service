@@ -1,0 +1,1037 @@
+/*Paleta kolorów
+    #d8e2dc -jasny zielony 
+    #ffe5d9 - beżowy
+    #ffcad4 - jasny różowy
+    #f4acb7 - różowy
+    #9d8189 - brudny róż
+    #fb6f92 - deep pink
+*/
+
+/* Deklaracja wartosco */
+:root {
+    --mietowy: #d8e2dc;
+    --bezowy: #ffe5d9;
+    --pudrowy: #f7c0dd;
+    --rozowy: #f5e8fc;
+    --nude: #6d4a6d;
+    --ciemnyRoz: #fb6f92;
+    --czcionka: #da2789;
+    --bialy: #fff;
+    --czarny: #000;
+}
+
+.wysokiKontrast {
+    --mietowy: white;
+    --bezowy: #001a26;
+    --pudrowy: #552551;
+    --rozowy: #54314b;
+    --nude: #bea1bf;
+    --ciemnyRoz: #fb6f92;
+    --czcionka: #ff008c;
+    background-color: var(--bezowy);
+    color: #ff008c;
+}
+
+body {
+    --wymiaryCzcionki: 1.8vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: var(--wymiaryCzcionki);
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-align: center;
+    background-color: var(--bezowy);
+    color: var(--czcionka);
+    transition: ease-out 0.3s; 
+    filter: none;
+}
+
+#strzalka {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 45%;
+    font-size: 2.8vh;
+
+    padding-top: 7px;
+    padding-left: auto;
+    padding-right: auto;
+    padding-bottom: 0;
+    
+    display: none;
+    position: fixed;
+    z-index: 8;
+    
+    bottom: 50px;
+    right: 50px;
+    background-color: var(--czcionka);
+    color: var(--mietowy);
+}
+
+#zawartosc {
+    width: 100%; 
+    margin-left: auto;
+    margin-right: auto;
+    filter: none;
+    background-color: var(--bezowy);
+}
+
+#wozek {
+    height: 60px;
+    width: 60px;
+
+    background-color: #0000e6;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+
+    display: block;
+    transform: scaleX(-1);
+    z-index: 8;
+
+    position: absolute;
+    right: 0;
+    top: 200px;
+}
+
+#opcje {
+    width: 275px;
+    align-items: center;
+    background-color: var(--bialy);
+    color: var(--czarny);
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 230px;
+    z-index: 8;
+}
+
+div#opcje img {
+    height: 20px;
+    width: 20px;
+}
+
+div#opcje b {
+    margin: 0;
+    margin-top: 4px;
+    font-size: 0.9em;
+}
+
+div#opcje p {
+    margin: 0;
+    border-top: black dotted 2px;
+    border-bottom: black dotted 2px;
+    font-size: 0.9em;
+}
+
+div#opcje button {
+    width: 80%;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    text-align: left;
+    background-color: var(--bialy);
+    border: none;
+    border-top: var(--czarny) dotted 2px;
+    cursor: pointer;
+}
+
+div#czcionka #procent {
+    visibility: hidden;
+    background-color: var(--czarny);
+    color: var(--bialy);
+    padding: 3px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: absolute;
+    z-index: 2;
+    top: 88%;
+    left: 38%;
+    }
+      
+    div#czcionka:hover #procent {
+    visibility: visible;
+    opacity: 1;
+    }
+
+div#opcje button:hover {
+    color: #0099ff;
+}
+
+#czcionka {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+}
+
+div#czcionka button{
+    width: 20px;
+    border: none;
+    float: left; 
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#pasek  {
+    margin: 0;
+    display: block;
+    background-color: var(--czcionka);
+    width: 100%;
+}
+
+div#pasek ul{
+    text-align: right;
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 25px;
+}
+
+div#pasek li {
+    display: inline;
+    text-transform: UPPERCASE;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-right: 2px solid var(--mietowy);
+    border-left: 2px solid var(--mietowy);
+}
+
+div#pasek a {
+    text-decoration: none;
+    font-weight: 200;
+    color: var(--mietowy);
+    border-bottom: solid 2px transparent;
+    transition: all ease-out 0.4s;
+}
+
+div#pasek a:hover {
+    font-weight: 1000;
+    border-bottom: solid 2px var(--mietowy);
+    transition: all ease-out 0.5s;
+}
+
+.aktywne {
+    font-weight: 1000;
+    text-decoration: underline; 
+    text-decoration-style: wavy;
+    text-decoration-color: var(--mietowy);
+    color: var(--mietowy);
+}
+
+#menu { /* Na gorze strony */
+    display: block;
+}
+
+#hamburger {
+    display: none;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+#naglowek {
+    background-image: url("Foto/daisy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30%;
+}
+
+#Logo {
+    margin-right: 65%;
+    transition: ease-out 0.8s;
+}
+
+div#Logo img {
+    height: 80%;
+    width: 80%;
+    transition: all ease-out 0.5s;
+}
+
+h1 {
+    width: 70%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 800;
+}
+
+#srodek {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+/*index */
+#naszeUslugi {
+    width: 100%;
+}
+.kategoriaUslugi {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height: 370px;
+    background-color: var(--mietowy);
+}
+
+.zdjecieUslugi {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center top;
+    transition: all ease-out 0.1;
+}
+
+#Cennik{ 
+    cursor: pointer;
+    border-bottom: 2px solid var(--nude);
+}
+
+#naszKontakt button {
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: var(--wymiaryCzcionki);
+    width: 35%;
+    margin: 5px;
+    background-color: transparent;
+    border: none;
+    color: var(--czcionka);
+    border-bottom: 1px solid var(--nude);
+    transition: all ease-out 0.4s;
+}
+
+#naszKontakt a {
+    color: var(--czcionka);
+    text-decoration: none;
+    transition: all ease-out 0.4s;
+    background-color: transparent;
+}
+
+#naszKontakt button:hover {
+    letter-spacing: 4px;
+}
+
+#naszKontakt a:visited {
+    background-color: var(--rozowy);
+    text-decoration: none;
+}
+#NaszaKadra {
+    background-image: url("Foto/krajobraz.jpg");
+    height: 250px;
+    margin: auto;
+}
+
+
+/*OFERTA*/
+#fraza {
+    margin-bottom: 5px;
+    float: right;
+    margin-right: 10%;
+    width: 20%;
+    transition: width 0.4s ease-in-out;
+    background-color: transparent;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: var(--wymiaryCzcionki);
+    color: var(--czcionka);
+    border: none;
+    border-bottom: 2px solid var(--nude);
+}
+
+#fraza:focus {
+    width: 80%;
+    border: none;
+}
+
+#TabelaOfert {
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+
+    width: 90%;
+    border-radius: 3%;
+
+    background-color: var(--mietowy);
+    
+}
+
+.opcja button {
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: var(--wymiaryCzcionki);
+    color: var(--czcionka);
+    border: none;
+}
+
+table#TabelaOfert{
+    border-collapse: collapse;
+    vertical-align: middle;
+    padding: 15px;
+}
+
+th {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+
+td {
+    padding: 0;
+    height: 40px;
+}
+
+th, td {
+    border-top: 1px solid var(--nude);
+    border-bottom: 1px solid var(--nude);
+    padding-left: 10px;
+}
+
+th.usluga {
+    border-top: none;
+    border-bottom: none;
+}
+
+
+.opisUslugi {
+    display: none;
+    padding-left: 25px;
+    padding-top: 25px;
+    column-span: all;
+} 
+
+td.szczegoly{
+    border-top: none;
+}
+
+/*Formularz*//*Kontakt*/
+
+select {
+    margin-bottom: 5px;
+    width: 25%;
+    transition:all 0.4s ease-in-out;
+    background-color: transparent;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: var(--wymiaryCzcionki);
+    color: var(--czcionka);
+    accent-color: var(--czcionka);
+    border: none;
+    border-bottom: 2px solid var(--nude);
+}
+
+input{
+    margin-bottom: 5px;
+    width: 50%;
+    transition:all 0.4s ease-in-out;
+    background-color: transparent;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: var(--wymiaryCzcionki);
+    color: var(--czcionka);
+    accent-color: var(--czcionka);
+    border: none;
+    border-bottom: 2px solid var(--nude);
+} 
+ 
+input[type = date] {
+    width: 20%;
+}
+
+input[type = time] {
+    width: 20%;
+}
+
+textarea {
+    margin-bottom: 5px;
+    width: 100%;
+    transition:all 0.4s ease-in-out;
+    background-color: var(--mietowy);
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: var(--wymiaryCzcionki);
+    color: var(--czcionka);
+    accent-color: var(--czcionka);
+    border: none;
+    border: 2px solid var(--nude);
+}
+
+input.przyciskForm {
+    border: 2px solid var(--nude);
+    background-color: var(--rozowy);
+    color: var(--nude);
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+input.przyciskForm:hover{
+    transition:all 0.4s ease-in-out;
+    letter-spacing: 3px;
+}
+
+#formularzKontakt{
+    text-align: left;
+    border: 4px double var(--mietowy);
+    margin-bottom: 25px;
+    padding: 50px;
+}
+
+#formularzWizyta {
+    border: 4px double var(--mietowy);
+    margin-bottom: 25px;
+    padding: 50px;
+}
+
+div#formularzWizyta input {
+    width: 100%;
+}
+
+#uslugi {
+    width: 50%;
+}
+/*Historia*/
+
+#kadra {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 500px;
+}
+
+.zdjecie h3 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.zdjecie {
+    position: absolute;
+    right: 0;
+    width:220px;
+    height: 400px;
+    padding-bottom: 40px;
+    filter: none;
+
+    z-index: 1;
+
+    background-color: var(--rozowy);
+    color: var(--nude);
+    filter: blur(5px);
+    box-shadow: 10px 10px 5px #575757;
+    z-index: 0;
+    transition:all ease-out 0.8s;
+}
+
+.zdjecie img {
+    width: 100%;
+    height: 80%;
+}
+
+.zdjecie button {
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    background-color: transparent;
+    color: var(--nude);
+    border: none;
+    font-size: 30px;
+}
+
+.zdjecie button:hover {
+    font-size: 35px;
+    letter-spacing: 4px;
+}
+
+.opis {
+    display: none;
+    position: absolute;
+    left: 45%;
+    bottom: 10%;
+    height: 400px;
+    width: 0;
+    z-index: 2;
+
+    background-color: var(--rozowy);
+    color: var(--nude);
+    box-shadow: 10px 10px 5px #575757;
+
+    text-align: center;
+    padding: 25px;
+    
+}
+
+#zalozenie {
+    margin-bottom: 40px;
+}
+
+#zalozenieLewo {
+    background-image: url("https://cdn.pixabay.com/photo/2020/05/30/06/01/daisy-5237787_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    float: left;
+    width: 45%;
+    height: 350px;
+    margin-right: 25px;
+}
+
+#zalozeniePrawo {
+    background-color: var(--rozowy);
+    color: var(--nude);
+
+    padding: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    text-align: justify;
+}
+
+/*responsywna mala gra*/
+#malePole{
+    background-color: var(--rozowy);
+    border: 3px double var(--czcionka);
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#malePole img.tyl {
+    position: absolute;
+    left: 0; 
+    width: 450px;
+    height: 450px;
+} 
+
+div#malePole .przyciskStart {
+    position: absolute;
+    top: 260px;
+    left: 155px;
+    width: 210px;
+
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+
+    border-radius: 5px;
+    z-index: 8;
+    cursor: url("Foto/kursor.png"),auto;
+    background-color: var(--pudrowy);
+    color: var(--czcionka);
+}
+
+div#malePole .przyciskGra {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    left: 20px;
+    border-radius: 10%;
+    cursor: url("Foto/kursor.png"),auto;
+    background-color: var(--mietowy);
+    border-color: var(--czcionka);
+    z-index: 4;
+}
+
+div#malePole .obrazek {
+    left: 5px;
+    top:5px;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    z-index: 4;
+}
+
+div#malePole .przyciskKolor {
+    position: absolute;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    cursor: url("Foto/kursor.png"),auto;
+    background-color: var(--mietowy);
+    border-color: var(--czcionka);
+    z-index: 4;
+}
+
+div#malePole .przyciskModelka {
+    position: absolute;
+    left: 103px;
+    top: 203px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    z-index: 6;
+    cursor: url("Foto/kursor.png"),auto;
+    background-color: var(--mietowy);
+    border-color: var(--czcionka);
+}
+
+div#malePole .gwiazdka {
+    position: absolute;
+    height: 125px;
+    width: 50px; /*h 250 w 100 */ 
+    transition: all ease-out 0.5s;
+}
+
+/*GRA*/
+#gra {
+    margin-bottom: 50px;
+}
+
+#poleGryStylistka{
+    background-color: var(--rozowy);
+    border: 3px double var(--czcionka);
+    position: relative;
+    width: 606px;
+    height: 606px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    z-index: 0;
+}
+
+div#poleGryStylistka img.tyl{
+    position: absolute;
+    left: 0; 
+    width: 606px; 
+    height: 606px;
+}
+
+#start{
+    position: absolute;
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+    background-image: url("Foto/wisnia.jpg");
+    background-size: cover;
+}
+
+div#poleGryStylistka .przyciskStart {
+    position: absolute;
+    top: 260px;
+    left: 195px;
+    width: 210px;
+
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+
+    border-radius: 5px;
+    z-index: 8;
+    cursor: url("Foto/kursor.png"),auto;
+    background-color: var(--pudrowy);
+    color: var(--czcionka);
+}
+
+div#poleGryStylistka .przyciskGra {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 20px;
+    border-radius: 10%;
+    cursor: url("Foto/kursor.png"),auto;
+    background-color: var(--mietowy);
+    border-color: var(--czcionka);
+    z-index: 4;
+}
+
+div#poleGryStylistka .obrazek {
+    left: 5px;
+    top:5px;
+    margin: auto;
+    width: 90px;
+    height: 90px;
+    z-index: 4;
+}
+
+.kolor {
+    height: 95%;
+    width: 98%;
+    border-radius: 5%;
+    margin: auto;
+    border: 1px solid var(--czarny);
+    background-color: var(--mietowy);
+    border-color: var(--czcionka);
+}
+
+div#poleGryStylistka .przyciskKolor {
+    position: absolute;
+    left: 20px;
+    width: 43px;
+    height: 40px;
+    border-radius: 10%;
+    cursor: url("Foto/kursor.png"),auto;
+    background-color: var(--mietowy);
+    border-color: var(--czcionka);
+    z-index: 4;
+}
+
+#txtModelka {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    z-index: 6;
+
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+div#poleGryStylistka .przyciskModelka {
+    position: absolute;
+    left: 103px;
+    top: 203px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    z-index: 6;
+    cursor: url("Foto/kursor.png"),auto;
+    background-color: var(--mietowy);
+    border-color: var(--czcionka);
+}
+
+#glowna {
+    display: none;
+}
+
+#paznokcie {
+    display: none;
+}
+
+#gotowce {
+    display: none;
+}
+
+#dodatki {
+    display: none;
+}
+
+#obrecz1 {
+    display: none;
+}
+
+#obrecz2 {
+    display: none;
+}
+
+#obrecz3 {
+    display: none;
+}
+
+#koniec {
+    display: none;
+}
+
+#podziekowanie {
+    position: absolute;
+    top: 2px;
+    left: 30%;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    z-index: 5;
+}
+
+div#poleGryStylistka .gwiazdka {
+    position: absolute;
+    height: 125px;
+    width: 50px; /*h 250 w 100 */ 
+    transition: all ease-out 0.5s;
+}
+
+/*STOPKA*/
+footer {
+    background-color: var(--pudrowy);
+    color: var(--nude);
+   
+}
+
+#footL {
+    float: left;
+    width: 40%;
+    height: 90%;
+    margin-top: 15px;
+}
+
+#footR {
+    float: right;
+    width: 50%;
+    text-align: right;
+    margin-right: 5%;
+    margin-right: 5%;
+}
+
+#footGuziki button {
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: var(--wymiaryCzcionki);
+    width: 35%;
+    margin: 5px;
+    background-color: transparent;
+    border: none;
+    color: var(--nude);
+    border-bottom: 1px solid var(--nude);
+    transition: all ease-out 0.4s;
+}
+
+#footGuziki a {
+    text-decoration: none;
+    transition: all ease-out 0.4s;
+    background-color: transparent;
+}
+
+#footGuziki button:hover {
+    background-color: var(--rozowy);
+}
+
+#footGuziki a:visited {
+    background-color: var(--rozowy);
+    text-decoration: none;
+}
+
+#uciekajaceOwoce {
+    position: relative;
+    margin-left: 0;
+    margin-bottom: 0;
+    background-color: var(--pudrowy);
+    height: 40px;
+    width: 100%;
+}
+
+.owoc {
+    position: absolute;
+    margin: 0;
+    left: 0;
+    bottom: 8px;
+    rotate: 0deg;
+    display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        --wymiaryCzcionki: 2vh;
+        /*font-size: var(--wymiaryCzcionkiDuzy);*/
+    }
+    div#Logo img {
+        height: 25%;
+        width: 40%;
+    }
+
+    #kadra {
+        width: 50%;
+    }
+    #naszeUslugi {
+        width: 60%;
+        margin: auto;
+    }
+
+    .zdjecieUslugi {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    body {
+        --wymiaryCzcionki: 2vh;
+        /*font-size: var(--wymiaryCzcionkiMaly);*/
+    }
+    #hamburger {
+        position: absolute;
+        display: block;
+        z-index: 3;
+    }
+    #wozek {
+        top:140px
+    }
+    .prostokat {
+        background-color: var(--bezowy);
+        border: solid 1px var(--nude);
+        width: 100%;
+        height: 15%;
+        position: absolute;
+        transition: all ease-out 0.5s;
+        box-shadow: 5px 5px 5px var(--rozowy);
+    }
+
+    #pasek  {
+        position: fixed;
+        width: 0;
+        height: 100vh;
+        z-index: 2;
+        padding-top: 15%;
+        transition: all ease-out 0.3s;
+        background-color: var(--mietowy);
+    }
+
+    div#pasek ul{
+        text-align: left;
+        margin: 0;
+        color: var(--mietowy);
+    }
+    
+    div#pasek li {
+        display: list-item;
+        padding-top: 10px;
+    }
+
+    div#pasek a {
+        color: var(--czcionka);
+    }
+
+    .aktywne {
+        color: var(--czcionka);
+    }
+
+    #menu {
+        display: none;
+        
+    }
+    #Logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div#Logo img {
+        height: 10%;
+        width: 40%;
+    }
+
+    #fraza {
+        width: 40%; 
+    }
+
+    #TabelaOfert {
+        width: 100%;
+    }
+
+    .zdjecie {
+        width:160px;
+        height: 280px;
+        font-size: 1.5vh;
+    }
+
+    .opis {
+        height: 280px;
+        font-size: 1.5vh;
+        bottom: 35%;
+    }
+
+    #kadra {
+        width: 90%;
+    } 
+}

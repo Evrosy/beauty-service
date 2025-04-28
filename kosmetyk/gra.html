@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- rezponsywność -->
+
+<title>Kosmetyk</title>
+
+<!--Czcionka z google fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel ="stylesheet" href="styl.css" type = "text/css" />
+    <script src="Skrypt.js" defer></script>
+    <script src="gra.js" defer></script>
+</head> 
+<body onload="sprawdz()">
+<div>
+    
+</div>
+<div id="strzalka">&#129145</div>
+<div id="wozek"> <!--Ikonka wózka-->
+    <img style="height: 50px; width: 50px; margin:5px" src="https://img.icons8.com/?size=100&id=9550&format=png&color=FFFFFF" alt="Przycisk wózka inwalidzkiego"> 
+</div> 
+<div id="opcje"> <!--Menu Dostępności-->
+        <button id="closeO" style="float: left; width: 20px;  height: 20px; margin-left: 30px; padding-top: 3px; border: none;">
+            <img src="Foto/zamknij.png"></button>
+        <b style="float: left; margin-left: 10px;">Zmień kontrast</b>
+
+        <button id="odwroc"><img src="Foto/odwroc.png">
+            Odwróć kolory
+        </button>
+        <button id="kontrast"><img src="Foto/ciemny.png">
+                Ciemny kontrast
+        </button>
+        <button id="lowS"><img src="Foto/20.png">
+            Niskie nasycenie
+        </button>
+        <button id="higS"><img src="Foto/80.png">
+            Wysokie nasycenie
+        </button>
+        <button id="BW" style=" border-bottom: black dotted 2px;">
+            <img src="Foto/czarno.png" style="height: 20px; width: 20px;">
+            Monochromatyczny
+        </button>
+
+        <b>Zmiana czcionki</b> <!--Zmiana czcionki-->
+        <div id="czcionka">
+            <button id="zmniejsz">-</button>
+            <p style="border: none; float: left; width: 40px;">Aa</p>
+            <button id="zwieksz">+</button>
+            <div id="procent">
+                <span>100%</span>
+            </div>
+            
+        </div>
+        <button id="reset"><img src="Foto/nic.png"><!--Reset wszystkich ustawień-->
+            Reset ustawień
+        </button>
+</div>
+<div style="clear:both"></div>
+<div id="zawartosc" class=""> <!--Glowna zawartosc aby ustawiac odpowiuednie wartosci dla strony-->
+<div id="hamburger">
+    <div class="prostokat" style="top: 0;"></div>
+    <div class="prostokat" style="top: 49%;"></div>
+    <div class="prostokat" style="top: 100%;"></div>
+</div>
+<div id="pasek"> <!--Nawigacja na górze strony-->
+    <div id="menu">
+        <ul>
+            <li><a href="oferta.html">Oferta</a></li>
+            <li><a href="historia.html">O nas</a></li>
+            <li class="aktywne">Relaks</li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </div>  
+</div>
+<div id="naglowek"> <!--Kwiatki z logiem-->
+    <div id="Logo"><a href="index.html"><img  src="Foto/kosmetyk.png" alt="Logo salonu Kosmetyk"></a></div>
+</div>
+
+<div id="srodek"> <!--Główna zawartość strony-->
+    <div id="gra">
+        <h1 id="tytulGra">Gra Stylistka Paznokci</h1>
+        <div id="poleGryStylistka" onmousemove="nowyKursor(1)" onmouseleave="nowyKursor(0)">
+            <div  id="start" onclick="rozpocznij()">
+                <button class="przyciskStart">START</button>
+            </div>
+            <div id="modelka">
+                <h3 id="txtModelka">Wybierz swoją modelkę</h3>
+                <button class="przyciskModelka" id="jasna" onclick="zmienModelke(0)"><div class="kolor" style="background-color: #ffefd2;"></div></button>
+                <button class="przyciskModelka" id="neutralna" onclick="zmienModelke(1)"><div class="kolor" style="background-color: #f7cba9;"></div></button>
+                <button class="przyciskModelka" id="ciemna" onclick="zmienModelke(2)"><div class="kolor" style="background-color: #bf9273;"></div></button>
+            </div>
+            <div id="glowna">
+                <button class="przyciskGra" id="malowanie" onclick="paznokcie()" ><img class="obrazek" src="Foto/malowanie.PNG"></button>
+                <button class="przyciskGra" id="lakier" onclick="gotowe()" ><img class="obrazek" src="Foto/lakier.PNG"></button>
+                <button class="przyciskGra" id="bizuteria" onclick="wyswietlDodatki()"><img class="obrazek" src="Foto/bizuteria.PNG"></button>
+                <button class="przyciskGra" onclick="reset()" style="left: 20px; bottom: 20px;" id="restart"><img class="obrazek" src="Foto/restart.PNG"></button>
+                <button class="przyciskGra" onclick="skoncz()" style="left: 485px; right: 20px; bottom: 20px;" id="dalej"><img class="obrazek" src="Foto/dalej.PNG"></button>
+            </div>
+            <div id="paznokcie">
+                <button class="przyciskGra" onclick="glowna()" style="left: 20px; top: 20px;" id="paznokciePowrot"><img class="obrazek" src="Foto/powrot.PNG"></button>
+                <button class="przyciskKolor" onclick="malowanie(0)" id="jasnyRoz"><div class="kolor" style="background-color: #fc96ba;"></div></button>
+                <button class="przyciskKolor" onclick="malowanie(1)" id="roz"><div class="kolor" style="background-color: #c783b1;"></div></button>
+                <button class="przyciskKolor" onclick="malowanie(2)" id="czerwony"><div class="kolor" style="background-color: #85042b;"></div></button>
+                <button class="przyciskKolor" onclick="malowanie(3)" id="jasnyNiebieskie"><div class="kolor" style="background-color: #b6d3ff;"></div></button>
+                <button class="przyciskKolor" onclick="malowanie(4)" id="fioletowy"><div class="kolor" style="background-color: #7f8cd6;"></div></button>
+                <button class="przyciskKolor" onclick="malowanie(5)" id="ciemnyNiebieski"><div class="kolor" style="background-color: #358dd9;"></div></button>
+                <button class="przyciskKolor" onclick="malowanie(6)" id="zielony"><div class="kolor" style="background-color: #006e56;"></div></button>
+                <button class="przyciskKolor" onclick="malowanie(7)" id="naturalny"><div class="kolor" style="background-color: #d08883"></div></button>
+            </div>
+            <div id="gotowce">
+                <button class="przyciskGra" onclick="glowna()" style="left: 140px; top: 20px;" id="gotowcePowrot"><img class="obrazek" src="Foto/powrot.PNG"></button>
+                <button class="przyciskGra" onclick="wzorki(0)" id="ombre"><img class="obrazek" src="Foto/wzorOmbre.PNG"></button>
+                <button class="przyciskGra" onclick="wzorki(1)" id="kwiatki"><img class="obrazek" src="Foto/wzorKwiatki.PNG"></button>
+                <button class="przyciskGra" onclick="wzorki(2)" id="geometria"><img class="obrazek" src="Foto/wzorGeometria.PNG"></button>
+                <button class="przyciskGra" onclick="wzorki(3)" id="krata"><img class="obrazek" src="Foto/wzorKrata.PNG"></button>
+            </div>
+            <div id="dodatki">
+                <button class="przyciskGra" onclick="glowna()" style="left: 140px; top: 20px;" id="dodatkiPowrot"><img class="obrazek" src="Foto/powrot.PNG"></button>
+                <button class="przyciskGra" onclick="nalozB(0)" class="bransoletka" style="right: 586px"><img class="obrazek" src="Foto/perelki.PNG"></button>
+                <button class="przyciskGra" onclick="nalozB(1)" class="bransoletka" style="right: 586px"><img class="obrazek" src="Foto/zlotaObrecz.PNG"></button>
+                <button class="przyciskGra" onclick="nalozB(2)" class="bransoletka" style="right: 586px"><img class="obrazek" src="Foto/rzemyk.PNG"></button>
+                <button class="przyciskGra" onclick="nalozP(0)" class="pierscionek" style="right: 20px"><img class="obrazek" src="Foto/pierscionekDiament.PNG"></button>
+                <button class="przyciskGra" onclick="nalozP(1)" class="pierscionek" style="right: 20px"><img class="obrazek" src="Foto/pierscionkiDuzo.PNG"></button>
+                <button class="przyciskGra" onclick="nalozP(2)" class="pierscionek" style="right: 20px"><img class="obrazek" src="Foto/pierscionekTrzyKolory.PNG"></button>
+                <button class="przyciskGra" onclick="zdejmij()" style="left: 485px; right: 20px; bottom: 20px;" id="nie"><img class="obrazek" src="Foto/X.png"></button>
+            </div>
+            <div id="podstawa">
+                <img class="tyl" style="z-index: 0;" src="Foto/cien.PNG">
+                <img class="tyl" style="z-index: 1;" id="dlonie" src="Foto/dlonieNeutral.PNG">
+                <img class="tyl" style="z-index: 2;" src="Foto/outline.PNG">
+                <img class="tyl" style="z-index: 2;" id="aktualne" src="Foto/normalne.PNG"> <!--Aktywne paznokcie-->
+                <img class="tyl" style="z-index: 3;" id="obrecz1" src = "Foto/bPerly.png">
+                <img class="tyl" style="z-index: 3;" id="obrecz2" src = "Foto/bZlota.png">
+                <img class="tyl" style="z-index: 3;" id="obrecz3" src = "Foto/bRzemyk.png">
+                <img class="tyl" style="z-index: 3;" id="obraczka">
+            </div>
+            <div id="koniec">
+                <h2 id="podziekowanie">Gratulacje</h2>
+                <img style="z-index: 3; left: 60px;" class="gwiazdka" src="Foto/gwiazdka.PNG">
+                <img style="z-index: 3; left: 5%; top:4%" class="gwiazdka" src="Foto/gwiazdka.PNG">
+                <img style="z-index: 3; left: 20%; top:40%" class="gwiazdka" src="Foto/gwiazdka.PNG">
+                <img style="z-index: 3; left: 40%; top:75%" class="gwiazdka" src="Foto/gwiazdka.PNG">
+                <img style="z-index: 3; left: 85%; top:15%" class="gwiazdka" src="Foto/gwiazdka.PNG">
+                <img style="z-index: 3; left: 90%; top:10%" class="gwiazdka" src="Foto/gwiazdka.PNG">
+                <button class="przyciskGra" onclick="reset()" style=" right: 20px; bottom: 20px;" id="restart"><img class="obrazek" src="Foto/restart.PNG"></button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+<footer> <!--Stopka strony-->
+    <div id="footL"> <!--Fragment mapy w stopce-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.4010783578372!2d21.211254224181168!3d52.341324054123056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471edbdc5cdd69d3%3A0xe43b1f59f342b5c3!2sHarmonijka%20Koby%C5%82ka!5e0!3m2!1spl!2spl!4v1717709289470!5m2!1spl!2spl" width="95%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+    <div id="footR"> <!--Linki do stron takie same jak na górze-->
+        <h2>Salon kosmetyczny "Kosmetyk"</h2>
+        <div id="footGuziki">
+            <button><a href="oferta.html">Oferta</a></button>
+            <button><a href="historia.html">O nas</a></button><br>
+            <button><a href="#gra">Relaks</a></button>
+            <button><a href="kontakt.html">Kontakt</a></button><br>
+        </div>
+        
+        <i>Photos, illustration an icons by Icons8</i>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="uciekajaceOwoce"> <!--Przestrzeń dla animacji uciekających owców-->
+        <img class="owoc" src="Foto/banan.png" style="height: 20px; width: 20px;" alt="plasterek banana">
+        <img class="owoc" src="Foto/ogorek.png" style="height: 30px; width: 30px;" alt="plasterek ogórka">
+        <img class="owoc" src="Foto/kiwi.png" style="height: 35px; width: 35px;" alt="plasterek kiiwi">
+        <img class="owoc" src="Foto/pomarancza.png" style="height: 40px; width: 40px;" alt="plasterek pomarańczy"> 
+    </div>
+    
+</footer>
+
+</div>
+    
+</body>
+</html>

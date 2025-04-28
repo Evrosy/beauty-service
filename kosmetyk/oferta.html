@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- rezponsywność -->
+
+<title>Kosmetyk</title>
+
+<!--Czcionka z google fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200&display=swap" rel="stylesheet">
+
+    <link rel ="stylesheet" href="styl.css" type = "text/css" />
+    <script src="Skrypt.js" defer></script>
+
+    <style>
+        #aktywne {
+            display: block;
+        }
+        
+        .opisUslugi {
+            display: none;
+        }
+
+    </style>
+</head> 
+<body>
+    <div id="strzalka">&#129145</div>
+    <div id="wozek"> <!--Ikonka wózka-->
+        <img style="height: 50px; width: 50px; margin:5px" src="https://img.icons8.com/?size=100&id=9550&format=png&color=FFFFFF" alt="Przycisk wózka inwalidzkiego"> 
+    </div> 
+    <div id="opcje"> <!--Menu Dostępności-->
+            <button id="closeO" style="float: left; width: 20px;  height: 20px; margin-left: 30px; padding-top: 3px; border: none;">
+                <img src="Foto/zamknij.png"></button>
+            <b style="float: left; margin-left: 10px;">Zmień kontrast</b>
+
+            <button id="odwroc"><img src="Foto/odwroc.png">
+                Odwróć kolory
+            </button>
+            <button id="kontrast"><img src="Foto/ciemny.png">
+                 Ciemny kontrast
+            </button>
+            <button id="lowS"><img src="Foto/20.png">
+                Niskie nasycenie
+            </button>
+            <button id="higS"><img src="Foto/80.png">
+                Wysokie nasycenie
+            </button>
+            <button id="BW" style=" border-bottom: black dotted 2px;">
+                <img src="Foto/czarno.png" style="height: 20px; width: 20px;">
+                Monochromatyczny
+            </button>
+
+            <b>Zmiana czcionki</b> <!--Zmiana czcionki-->
+            <div id="czcionka">
+                <button id="zmniejsz">-</button>
+                <p style="border: none; float: left; width: 40px;">Aa</p>
+                <button id="zwieksz">+</button>
+                <div id="procent">
+                    <span>100%</span>
+                </div>
+                
+            </div>
+            <button id="reset"><img src="Foto/nic.png"><!--Reset wszystkich ustawień-->
+                Reset ustawień
+            </button>
+    </div>
+    <div style="clear:both"></div>
+<div id="zawartosc" class=""> <!-- Glowna zawartosc aby ustawiac odpowiednie wartosci dla strony-->
+    <div id="hamburger">
+        <div class="prostokat" style="top: 0;"></div>
+        <div class="prostokat" style="top: 49%;"></div>
+        <div class="prostokat" style="top: 100%;"></div>
+    </div>
+    <div id="pasek"> <!--Nawigacja na górze strony-->
+        <div id="menu">
+            <ul>
+                <li class="aktywne">Oferta</li>
+                <li><a href="historia.html">O nas</a></li>
+                <li><a href="gra.html">Relaks</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>  
+    </div>
+    <div id="naglowek"> <!--Kwiatki z logiem-->
+        <div id="Logo"><a href="index.html"><img  src="Foto/kosmetyk.png" alt="Logo salonu Kosmetyk"></a></div>
+    </div>
+    
+    <div id="srodek"> <!--Główna zawartość strony-->
+    <div id="oferta">
+        <h1>Cennik</h1>
+        <div class="divider"></div>
+        <input type="text" placeholder="Szukaj zabiegu" id="fraza" onkeyup="wyszukaj()">
+        <table id="TabelaOfert">
+            <tr style="height: 50px;">
+                <th id="nazwaUslugi" style="border-top: none;">Nazwa usługi</th>
+                <th id="czas" style="width:80px; padding: 0; border-top: none;">Czas trwania</th>
+                <th id="cena" style="width:80px; padding: 0; border-top: none;">Cena</th>
+                <th id="pokaz" style="width:80px; padding: 0; border-top: none;"></th>
+                <th id="zapisz" style="width:10px; padding-right: 5px; border-top: none;"></th>
+            </tr>
+            <tr>
+                <th colspan="5" class="usluga">Zabiegi na twarz</th>
+            </tr>
+            <tr class="opcja" id="">
+                <td>Oczyszczanie twarzy manualne</td>
+                <td>60 min</td>
+                <td>150zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(0)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Zabieg oczyszczania manualnego jest przeznaczony dla 
+                    osób z prosblematyczną cerą, skłonną do zanieczyszczeń 
+                    i zaskórników. Proces obejmuje dokładne oczyszczenie skóry, 
+                    złuszczenie martwego naskórka, parowanie twarzy w celu 
+                    otwarcia porów oraz ręczne usunięcie zanieczyszczeń. 
+                    Zabieg kończy się nałożeniem maski łagodzącej oraz kremu nawilżającego.
+                </td>
+            </tr>
+            <tr class="opcja" id="">
+                <td>Peeling kawitacyjny</td>
+                <td>60 min</td>
+                <td>130zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(1)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Peeling kawitacyjny to bezbolesna metoda oczyszczania skóry za
+                    pomocą ultradźwięków. Zabieg skutecznie usuwa martwe komórki naskórka, 
+                    zanieczyszczenia i nadmiar sebum. Jest idealny dla każdego rodzaju cery,
+                    w tym wrażliwej i naczynkowej. Po zabiegu skóra staje się gładka, 
+                    odświeżona i lepiej przygotowana do wchłaniania składników aktywnych.
+                </td>
+            </tr>
+            <tr class="opcja" id="">
+                <td>Mikrodermabrazja</td>
+                <td>75 min</td>
+                <td>180zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(2)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Mikrodermabrazja to mechaniczne złuszczanie naskórka za 
+                    pomocą specjalnej głowicy pokrytej diamentami. Zabieg jest bezpieczny
+                    i skuteczny, a jego efekty to wygładzenie skóry, redukcja drobnych 
+                    zmarszczek, blizn potrądzikowych i przebarwień. Po zabiegu skóra 
+                    staje się bardziej promienna i odświeżona.
+                </td>
+            </tr>
+            <tr class="opcja" id="">
+                <td>Zabieg nawilżający</td>
+                <td>60 min</td>
+                <td>140zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(3)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Zabieg nawilżający jest idealny dla skóry suchej i odwodnionej.
+                    Obejmuje dokładne oczyszczenie skóry, delikatny peeling, a następnie nałożenie
+                    intensywnie nawilżającej maski oraz serum. Dzięki temu skóra odzyskuje elastyczność, 
+                    miękkość i zdrowy wygląd. Zabieg jest zakończony aplikacją kremu nawilżającego 
+                    dostosowanego do typu skóry.
+                </td>
+                
+            </tr>
+            <tr class="opcja">
+                <td >Zabieg przeciwzmarszczkowy</td>
+                <td>75 min</td>
+                <td>200zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(4)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Zabieg przeciwzmarszczkowy to kompleksowa terapia dla skóry dojrzałej, 
+                    która potrzebuje liftingu i ujędrnienia. Zawiera elementy masażu twarzy, aplikację 
+                    serum z retinolem lub kwasem hialuronowym oraz maskę liftingującą. Zabieg poprawia 
+                    elastyczność skóry, redukuje widoczność zmarszczek i nadaje skórze młodszy wygląd.
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Mezoterapia bezigłowa</td>
+                <td>75 min</td>
+                <td>220zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(5)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Mezoterapia bezigłowa to nowoczesny zabieg, który polega na wprowadzeniu
+                    substancji aktywnych w głąb skóry za pomocą impulsów elektrycznych. Zabieg ten 
+                    poprawia nawilżenie, ujędrnia skórę i redukuje oznaki starzenia. Jest bezbolesny
+                    i nieinwazyjny, a jego efekty to widoczna poprawa kondycji skóry.
+                </td>
+            </tr>
+            <tr>
+                <th colspan="5"  class="usluga">Zabiegi na ciało</th>
+            </tr>
+            <tr class="opcja">
+                <td>Peeling całego ciała</td>
+                <td>45 min</td>
+                <td>100zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(6)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Peeling całego ciała to zabieg, który ma na celu złuszczenie martwego 
+                    naskórka i odświeżenie skóry. Przy użyciu specjalnych preparatów z drobinkami 
+                    peelingującymi, skóra staje się gładka, miękka i lepiej wchłania substancje 
+                    odżywcze z kosmetyków. Zabieg jest idealny przed nałożeniem balsamu lub olejku, 
+                    co dodatkowo poprawia nawilżenie i elastyczność skóry.
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Zabieg ujędrniający</td>
+                <td>90 min</td>
+                <td>200zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(7)">&#11167</button></td>
+                
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Zabieg ujędrniający to kompleksowa 
+                    terapia mająca na celu poprawę jędrności i elastyczności skóry. Procedura
+                    obejmuje peeling, masaż ujędrniający oraz nałożenie specjalnych preparatów 
+                    ujędrniających. Zabieg stymuluje produkcję kolagenu i elastyny, co sprawia, 
+                    że skóra staje się bardziej napięta i wygładzona. Jest idealny dla osób, które
+                    chcą poprawić wygląd skóry po utracie wagi lub w wyniku naturalnego procesu starzenia.
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Body wrapping</td>
+                <td>60 min</td>
+                <td>180zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(8)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Body wrapping to zabieg wyszczuplający i ujędrniający, który polega na 
+                    nałożeniu na ciało specjalnych preparatów o działaniu detoksykującym i antycellulitowym, 
+                    a następnie owinięciu ciała folią. Dzięki temu składniki aktywne głęboko wnikają w skórę, 
+                    wspomagając redukcję cellulitu i modelowanie sylwetki. Zabieg poprawia krążenie krwi i limfy, 
+                    co pomaga w usuwaniu toksyn z organizmu.
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Depilacja woskiem nogi, ręce lub bikini</td>
+                <td colspan="2">100zł/150zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(9)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Depilacja woskiem to skuteczna metoda usuwania niechcianego owłosienia z różnych 
+                    partii ciała. Zabieg polega na nałożeniu ciepłego wosku na skórę, a następnie usunięciu go wraz z 
+                    włoskami za pomocą specjalnych pasków. Depilacja woskiem zapewnia gładką skórę na dłużej niż tradycyjne 
+                    metody golenia, a regularne wykonywanie zabiegu osłabia odrastające włoski, czyniąc je 
+                    cieńszymi i mniej widocznymi.
+                </td>
+            </tr>
+            <tr>
+                <th colspan="5" class="usluga">Zabiegi zdrowotne</th>
+            </tr>
+            <tr class="opcja">
+                <td>Masaż klasyczny</td>
+                <td>60 min</td>
+                <td>150 zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(10)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Masaż klasyczny to popularna technika relaksacyjna i terapeutyczna, która pomaga 
+                    w redukcji napięcia mięśniowego, poprawie krążenia krwi oraz ogólnym odprężeniu. Masaż polega na 
+                    stosowaniu różnorodnych technik ugniatania, głaskania i rozcierania, które dostosowuje się do 
+                    indywidualnych potrzeb klienta. Jest idealny dla osób pragnących złagodzić stres, zmniejszyć 
+                    ból mięśniowy i poprawić samopoczucie.
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Masaż relaksacyjny</td>
+                <td>60 min</td>
+                <td>160 zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(11)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Masaż relaksacyjny to zabieg, który pomaga w pełnym odprężeniu 
+                    ciała i umysłu. Stosowane techniki są delikatne i powolne, co sprzyja wyciszeniu i 
+                    redukcji stresu. Masaż relaksacyjny doskonale poprawia nastrój, łagodzi napięcia 
+                    mięśniowe i poprawia jakość snu. Jest idealny dla osób pragnących 
+                    zrelaksować się po ciężkim dniu.
+                </td>
+            </tr>
+            <tr class="opcja"> 
+                <td>Masaż gorącymi kamieniami</td>
+                <td>90 min</td>
+                <td>200 zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(12)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Masaż gorącymi kamieniami to relaksacyjny zabieg, który wykorzystuje 
+                    ciepło kamieni wulkanicznych, aby głęboko odprężyć mięśnie i zrelaksować ciało. 
+                    Ciepłe kamienie umieszczane są na strategicznych punktach ciała, a następnie 
+                    używane do masażu, co pomaga w redukcji napięcia i stresu, poprawia krążenie 
+                    krwi i limfy oraz wspomaga detoksykację organizmu.
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Masaż limfatyczny</td>
+                <td>60 min</td>
+                <td>180zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(13)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Masaż limfatyczny to specjalistyczna technika masażu, która 
+                    stymuluje przepływ limfy w organizmie. Zabieg ten pomaga w eliminacji toksyn, 
+                    redukcji obrzęków i wspomaga układ odpornościowy. Masaż limfatyczny jest 
+                    szczególnie polecany dla osób z problemami obrzękowymi, po zabiegach 
+                    chirurgicznych oraz dla poprawy ogólnego stanu zdrowia i samopoczucia.
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Zabieg antycellulitowy</td>
+                <td>60 min</td>
+                <td>170zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(14)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Zabieg antycellulitowy to intensywna terapia, której celem jest 
+                    redukcja widoczności cellulitu i poprawa struktury skóry. Zabieg obejmuje peeling, 
+                    masaż antycellulitowy oraz nałożenie specjalnych preparatów, które wspomagają 
+                    rozbijanie komórek tłuszczowych i poprawę krążenia. Regularne wykonywanie zabiegu 
+                    pomaga w wygładzeniu skóry i redukcji "skórki pomarańczowej".
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Kąpiel parafinowa na dłonie</td>
+                <td></td>
+                <td>50 zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(15)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Kąpiel parafinowa na dłonie to zabieg nawilżający i regenerujący, 
+                    który polega na zanurzeniu dłoni w ciepłej parafinie. Parafina tworzy na skórze 
+                    warstwę ochronną, która głęboko nawilża i odżywia skórę, poprawiając jej 
+                    elastyczność i miękkość. Zabieg jest idealny dla osób z suchą i zniszczoną 
+                    skórą dłoni, a także jako forma relaksu i pielęgnacji.
+                </td>
+            </tr>
+            <tr >
+                <th colspan="5" class="usluga">Wizaż</th>
+            </tr>
+            <tr class="opcja">
+                <td>Makijaż dzienny</td>
+                <td></td>
+                <td>80 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Makijaż wieczorowy</td>
+                <td></td>
+                <td>120zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Makijaż ślubny</td>
+                <td></td>
+                <td>200 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Makijaż próbny</td>
+                <td></td>
+                <td>100 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Stylizacja brwi henną</td>
+                <td></td>
+                <td>40 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Regulacja brwi</td>
+                <td></td>
+                <td>20 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr >
+                <th colspan="5" class="usluga">Paznokcie</th>
+            </tr>
+            <tr class="opcja">
+                <td>Manicure klasyczny</td>
+                <td></td>
+                <td>50 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Manicure hybrydowy</td>
+                <td></td>
+                <td>80 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Pedicure klasyczny</td>
+                <td></td>
+                <td>90 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Pedicure hybrydowy</td>
+                <td></td>
+                <td>110 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Przedłużanie paznokci żelem</td>
+                <td></td>
+                <td>150 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Zdobienie paznokci</td>
+                <td></td>
+                <td>10zł/szt</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr class="opcja">
+                <td>Usunięcie hybrydy/żelu</td>
+                <td></td>
+                <td>30 zł</td>
+                <td colspan="2"><button onclick="formularz()">WIZYTA</button></td>
+            </tr>
+            <tr>
+                <th colspan="5" class="usluga">Zabiegi specjalistyczne</th>
+            </tr>
+            <tr class="opcja">
+                <td>Zabieg z kwasami</td>
+                <td>75 min</td>
+                <td>220 zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(16)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Zabieg z kwasami, zwany również peelingiem chemicznym, polega 
+                    na aplikacji kwasów owocowych na skórę w celu złuszczenia martwego naskórka i 
+                    stymulacji odnowy komórkowej. Zabieg ten poprawia strukturę skóry, rozjaśnia 
+                    przebarwienia, redukuje zmarszczki oraz oczyszcza pory. Jest szczególnie 
+                    polecany dla osób z trądzikiem, przebarwieniami i oznakami starzenia.
+
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Laserowe usuwanie owłosienia</td>
+                <td colspan="2">150-300 zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(17)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Laserowe usuwanie owłosienia to nowoczesny, skuteczny i trwały
+                    sposób redukcji niechcianego owłosienia. Zabieg polega na wykorzystaniu energii
+                    lasera, która jest absorbowana przez melaninę w mieszkach włosowych, co prowadzi
+                    do ich uszkodzenia i uniemożliwia dalszy wzrost włosów. Procedura jest 
+                    precyzyjna i bezpieczna, a jej efekty to gładka skóra bez podrażnień i wrastających
+                    włosków. Aby osiągnąć optymalne rezultaty, zaleca się serię kilku zabiegów, które 
+                    pozwalają na usunięcie włosów w różnych fazach wzrostu.
+
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Redukcja przebarwień laserem</td>
+                <td>75 min</td>
+                <td> 250 zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(18)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Zabieg redukcji przebarwień laserem to nowoczesna metoda usuwania 
+                    nieestetycznych plam pigmentacyjnych. Laser precyzyjnie usuwa nadmiar melaniny, nie 
+                    uszkadzając przy tym zdrowej skóry. Zabieg jest bezpieczny i skuteczny, a efekty to 
+                    wyraźne rozjaśnienie przebarwień i poprawa kolorytu skóry. Idealny dla osób zmagających 
+                    się z plamami słonecznymi, starczymi oraz przebarwieniami potrądzikowymi.
+
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td>Zabieg na rozstępy</td>
+                <td>90 min</td>
+                <td>250 zł</td>
+                <td><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(19)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Zabieg na rozstępy ma na celu redukcję widoczności rozstępów 
+                    oraz poprawę struktury skóry w miejscach ich występowania. Procedura obejmuje 
+                    kombinację technik, takich jak mikrodermabrazja, terapia mikroigłowa oraz 
+                    aplikacja specjalistycznych preparatów regenerujących. Mikrodermabrazja złuszcza 
+                    martwy naskórek, a mikronakłuwanie stymuluje produkcję kolagenu i elastyny, co sprzyja 
+                    regeneracji skóry. Regularne wykonywanie zabiegu pomaga w wygładzeniu skóry, redukcji 
+                    rozstępów i poprawie jej elastyczności.
+                </td>
+            </tr>
+            <tr class="opcja">
+                <td >Lifting twarzy falami radiowymi</td>
+                <td >75 min</td>
+                <td >280 zł</td>
+                <td ><button onclick="formularz()">WIZYTA</button></td>
+                <td><button class="pokazOpis" onclick="pokazOpisUslugi(20)">&#11167</button></td>
+            </tr>
+            <tr class="opisUslugi">
+                <td class="szczegoly">Lifting twarzy falami radiowymi to nieinwazyjny zabieg, który 
+                    wykorzystuje energię fal radiowych do stymulacji produkcji kolagenu i elastyny. 
+                    Zabieg ten poprawia jędrność skóry, redukuje zmarszczki i modeluje owal twarzy. 
+                    Jest bezpieczny, nie wymaga rekonwalescencji, a efekty są widoczne już po pierwszej 
+                    sesji. Idealny dla osób pragnących unieść i ujędrnić skórę twarzy bez interwencji 
+                    chirurgicznej.
+
+                </td>
+            </tr>
+            <tr>
+                <td style="border-bottom: none;"></td>
+                <td style="border-bottom: none;"></td>
+                <td style="border-bottom: none;"></td>
+                <td style="border-bottom: none;"></td>
+                <td style="border-bottom: none;"></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    <footer> <!--Stopka strony-->
+        <div id="footL"> <!--Fragment mapy w stopce-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.4010783578372!2d21.211254224181168!3d52.341324054123056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471edbdc5cdd69d3%3A0xe43b1f59f342b5c3!2sHarmonijka%20Koby%C5%82ka!5e0!3m2!1spl!2spl!4v1717709289470!5m2!1spl!2spl" width="95%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+        <div id="footR"> <!--Linki do stron takie same jak na górze-->
+            <h2>Salon kosmetyczny "Kosmetyk"</h2>
+            <div id="footGuziki">
+                <button><a href="#oferta">Oferta</a></button>
+                <button><a href="historia.html">O nas</a></button><br>
+                <button><a href="gra.html">Relaks</a></button>
+                <button><a href="kontakt.html">Kontakt</a></button><br>
+            </div>
+            
+            <i>Photos, illustration an icons by Icons8</i>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="uciekajaceOwoce"> <!--Przestrzeń dla animacji uciekających owców-->
+            <img class="owoc" src="Foto/banan.png" style="height: 20px; width: 20px;" alt="plasterek banana">
+            <img class="owoc" src="Foto/ogorek.png" style="height: 30px; width: 30px;" alt="plasterek ogórka">
+            <img class="owoc" src="Foto/kiwi.png" style="height: 35px; width: 35px;" alt="plasterek kiiwi">
+            <img class="owoc" src="Foto/pomarancza.png" style="height: 40px; width: 40px;" alt="plasterek pomarańczy"> 
+        </div>
+        
+    </footer>
+    
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- rezponsywność -->
+
+<title>Kosmetyk</title>
+
+<!--Czcionka z google fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200&display=swap" rel="stylesheet">
+
+    <link rel ="stylesheet" href="styl.css" type = "text/css" />
+    <script src="Skrypt.js" defer></script>
+</head> 
+<body>
+    <div id="strzalka">&#129145</div>
+    <div id="wozek"> <!--Ikonka wózka-->
+        <img style="height: 50px; width: 50px; margin:5px" src="https://img.icons8.com/?size=100&id=9550&format=png&color=FFFFFF" alt="Przycisk wózka inwalidzkiego"> 
+    </div> 
+    <div id="opcje"> <!--Menu Dostępności-->
+            <button id="closeO" style="float: left; width: 20px;  height: 20px; margin-left: 30px; padding-top: 3px; border: none;">
+                <img src="Foto/zamknij.png"></button>
+            <b style="float: left; margin-left: 10px;">Zmień kontrast</b>
+
+            <button id="odwroc"><img src="Foto/odwroc.png">
+                Odwróć kolory
+            </button>
+            <button id="kontrast"><img src="Foto/ciemny.png">
+                 Ciemny kontrast
+            </button>
+            <button id="lowS"><img src="Foto/20.png">
+                Niskie nasycenie
+            </button>
+            <button id="higS"><img src="Foto/80.png">
+                Wysokie nasycenie
+            </button>
+            <button id="BW" style=" border-bottom: black dotted 2px;">
+                <img src="Foto/czarno.png" style="height: 20px; width: 20px;">
+                Monochromatyczny
+            </button>
+
+            <b>Zmiana czcionki</b> <!--Zmiana czcionki-->
+            <div id="czcionka">
+                <button id="zmniejsz">-</button>
+                <p style="border: none; float: left; width: 40px;">Aa</p>
+                <button id="zwieksz">+</button>
+                <div id="procent">
+                    <span>100%</span>
+                </div>
+                
+            </div>
+            
+            <button id="reset"><img src="Foto/nic.png"><!--Reset wszystkich ustawień-->
+                Reset ustawień
+            </button>
+    </div>
+    <div style="clear:both"></div>
+<div id="zawartosc" class=""> <!--Glowna zawartosc aby ustawiac odpowiuednie wartosci dla strony-->
+    <div id="hamburger">
+        <div class="prostokat" style="top: 0;"></div>
+        <div class="prostokat" style="top: 49%;"></div>
+        <div class="prostokat" style="top: 100%;"></div>
+    </div>
+    <div id="pasek"> <!--Nawigacja na górze strony-->
+        <div id="menu">
+            <ul>
+                <li><a href="oferta.html">Oferta</a></li>
+                <li  class="aktywne">O nas</li>
+                <li><a href="gra.html">Relaks</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>  
+    </div>
+    <div id="naglowek"> <!--Kwiatki z logiem-->
+        <div id="Logo"><a href="index.html"><img  src="Foto/kosmetyk.png" alt="Logo salonu Kosmetyk"></a></div>
+    </div>
+    
+    <div id="srodek"> <!--Główna zawartość strony-->
+    <div id="historia">
+        <h2>Nasza kadra</h2>
+        <div id="kadra">
+            <div class="pracownik">
+                <div class="zdjecie">
+                    <img src="Foto/Anna.jpeg">
+                    <h3>Anna Kowalska</h3>
+                    <b>Kosmetolog</b><br>
+                    <button onclick="pokazOpis ()">&#11166</button><!-- AFTER &#11164-->
+                </div>
+                <div class="opis">
+                    Anna ma ponad 10-letnie doświadczenie w branży kosmetycznej. 
+                    Specjalizuje się w zabiegach na twarz, w tym w mikrodermabrazji, 
+                    ezoterapii i peelingach chemicznych. Posiada liczne certyfikaty i regularnie
+                    uczestniczy w szkoleniach, aby być na bieżąco z najnowszymi trendami i technologiami.
+                </div>
+            </div>
+            <div class="pracownik">
+                <div class="zdjecie">
+                    <img src="Foto/Maria.jpeg">
+                    <h3>Maria Nowak</h3>
+                    <b> Specjalistka od Wizażu</b><br>
+                    <button class="pokazOpis" onclick="pokazOpis ()">&#11166</button>
+                </div>
+                <div class="opis">
+                    Maria jest uznaną makijażystką z 8-letnim doświadczeniem. 
+                    Pracowała przy licznych sesjach zdjęciowych oraz przygotowaniach do 
+                    ślubów i innych ważnych wydarzeń. Jej kreatywność i umiejętność
+                    podkreślania naturalnego piękna klientek sprawiają, że jest bardzo
+                    ceniona w swoim zawodzie.
+                </div>
+            </div>
+            <div class="pracownik">
+                <div class="zdjecie">
+                    <img src="Foto/Kasia.jpeg">
+                    <h3>Kasia Wiśniewska</h3>
+                    <b>Specjalistka ds. Pielęgnacji Dłoni i Stóp</b><br>
+                    <button class="pokazOpis" onclick="pokazOpis ()">&#11166</button>
+                </div>
+                <div class="opis">
+                    Katarzyna to ekspertka w zakresie manicure i pedicure, z 6-letnim doświadczeniem. 
+                    Specjalizuje się w hybrydzie oraz żelowych stylizacjach paznokci. 
+                    Jej precyzja i dbałość o detale sprawiają, że klientki zawsze 
+                    wychodzą z salonu z pięknymi i zadbanymi paznokciami.
+                </div>
+            </div>
+            <div class="pracownik">
+                <div class="zdjecie">
+                    <img src="Foto/Agnieszka.jpeg">
+                    <h3>Agnieszka Wójcik</h3>
+                    <b>Masażystka</b><br>
+                    <button class="pokazOpis" onclick="pokazOpis ()">&#11166</button>
+                </div>
+                <div class="opis">
+                    Agnieszka ma 7-letnie doświadczenie w masażach klasycznych, 
+                    relaksacyjnych oraz specjalistycznych. Jej umiejętności w zakresie 
+                    masażu gorącymi kamieniami oraz masażu limfatycznego są doceniane 
+                    przez klientów szukających zarówno relaksu, jak i profesjonalnej 
+                    pomocy w dolegliwościach bólowych.
+
+                </div>
+            </div>
+            <div class="pracownik">
+                <div class="zdjecie">
+                    <img src="Foto/Piotr.jpeg">
+                    <h3>Piotr Zieliński</h3>
+                    <b>Specjalista ds. Zabiegów Laserowych</b><br>
+                    <button class="pokazOpis" onclick="pokazOpis ()">&#11166</button>
+                </div>
+                
+                <div class="opis">
+                    Piotr jest wykwalifikowanym specjalistą z 5-letnim doświadczeniem 
+                    w pracy z laserami medycznymi. Specjalizuje się w laserowym 
+                    usuwaniu owłosienia, redukcji przebarwień oraz zabiegach na rozstępy. 
+                    Jego wiedza i profesjonalizm gwarantują skuteczność i bezpieczeństwo 
+                    przeprowadzanych zabiegów.
+
+                </div>
+            </div>
+            <div class="pracownik">
+                <div class="zdjecie">
+                    <img src="Foto/Ewa.jpeg">
+                    <h3>Ewa Kaczmarek</h3>
+                    <b>Kosmetolog</b><br>
+                    <button onclick="pokazOpis ()">&#11166</button>
+                </div>
+                <div class="opis">
+                    Ewa ma 6-letnie doświadczenie w zabiegach na ciało i twarz. 
+                    Jej specjalizacją są zabiegi ujędrniające, body wrapping oraz 
+                    zaawansowane zabiegi z użyciem kwasów. Ewa jest znana z 
+                    indywidualnego podejścia do każdej klientki i dostosowywania 
+                    zabiegów do ich potrzeb i oczekiwań.
+
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="zalozenie">
+            <h2>Nasza historia</h2>
+            <div id="zalozenieLewo"></div>
+            <div id="zalozeniePrawo">
+                <p>
+                    Nasz salon kosmetyczny został założony w 2012 roku przez Annę Kowalską, 
+                    doświadczoną kosmetolog, która od zawsze marzyła o stworzeniu miejsca, 
+                    gdzie każda osoba będzie mogła poczuć się piękna i zadbana. Anna ukończyła 
+                    studia z zakresu kosmetologii z wyróżnieniem i przez kilka lat pracowała w renomowanych 
+                    salonach w Polsce i za granicą. Jej pasja do kosmetyki oraz chęć niesienia pomocy innym 
+                    sprawiły, że postanowiła otworzyć własny salon.
+                </p>
+                <p>
+                    Na początku działalności salon mieścił się w niewielkim lokalu w centrum miasta.
+                    Zespół składał się z trzech osób: Anny Kowalskiej, Marii Nowak i Katarzyny Wiśniewskiej. 
+                    Dzięki ich zaangażowaniu, profesjonalizmowi i indywidualnemu podejściu do klientów, 
+                    salon szybko zyskał sobie wierną klientelę. Anna Kowalska, kosmetolog i założycielka 
+                    salonu, od samego początku prowadzi salon z wielką pasją i zaangażowaniem. Jej wiedza i 
+                    umiejętności w zakresie zabiegów na twarz są niezwykle cenione przez klientów. 
+                    Anna specjalizuje się w mikrodermabrazji, mezoterapii oraz zaawansowanych peelingach chemicznych.
+                </p>
+                <p>
+                    Maria Nowak, specjalistka od wizażu, dołączając do zespołu jako jedna z pierwszych
+                    pracownic, wnosiła ze sobą bogate doświadczenie i kreatywność. Jej zdolności w tworzeniu
+                    makijaży dziennych, wieczorowych oraz ślubnych przyciągnęły wiele klientek, które
+                    cenią sobie jej profesjonalizm i indywidualne podejście. Katarzyna Wiśniewska, 
+                    specjalistka ds. pielęgnacji dłoni i stóp, od początku była odpowiedzialna za usługi
+                    manicure i pedicure. Jej precyzja i umiejętności w stylizacji paznokci szybko zyskały
+                    uznanie klientów. Specjalizuje się w hybrydach oraz żelowych stylizacjach paznokci.
+                </p>
+                <p>
+                    W ciągu pierwszych kilku lat działalności salon zyskał coraz większą popularność, 
+                    co pozwoliło na jego rozbudowę i przeniesienie do większego lokalu. 
+                    Wraz z rozwojem salonu do zespołu dołączyli kolejni specjaliści, co umożliwiło 
+                    rozszerzenie oferty o nowe zabiegi. Dziś nasz salon kosmetyczny to nowoczesne, 
+                    przestronne miejsce, w którym oferujemy szeroki zakres zabiegów na twarz, ciało, 
+                    dłonie i stopy. Pomimo upływu lat, Anna Kowalska, Maria Nowak i Katarzyna Wiśniewska 
+                    nadal pracują w salonie, wnosząc swoją wiedzę, doświadczenie i pasję do każdego zabiegu. 
+                    Ich zaangażowanie i troska o klientów sprawiają, że nasz salon jest miejscem, 
+                    do którego klienci chętnie wracają.
+                </p>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    </div>
+    <footer> <!--Stopka strony-->
+        <div id="footL"> <!--Fragment mapy w stopce-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.4010783578372!2d21.211254224181168!3d52.341324054123056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471edbdc5cdd69d3%3A0xe43b1f59f342b5c3!2sHarmonijka%20Koby%C5%82ka!5e0!3m2!1spl!2spl!4v1717709289470!5m2!1spl!2spl" width="95%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+        <div id="footR"> <!--Linki do stron takie same jak na górze-->
+            <h2>Salon kosmetyczny "Kosmetyk"</h2>
+            <div id="footGuziki">
+                <button><a href="oferta.html">Oferta</a></button>
+                <button><a href="#historia">O nas</a></button><br>
+                <button><a href="gra.html">Relaks</a></button>
+                <button><a href="kontakt.html">Kontakt</a></button><br>
+            </div>
+            
+            <i>Photos, illustration an icons by Icons8</i>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="uciekajaceOwoce"> <!--Przestrzeń dla animacji uciekających owców-->
+            <img class="owoc" src="Foto/banan.png" style="height: 20px; width: 20px;" alt="plasterek banana">
+            <img class="owoc" src="Foto/ogorek.png" style="height: 30px; width: 30px;" alt="plasterek ogórka">
+            <img class="owoc" src="Foto/kiwi.png" style="height: 35px; width: 35px;" alt="plasterek kiiwi">
+            <img class="owoc" src="Foto/pomarancza.png" style="height: 40px; width: 40px;" alt="plasterek pomarańczy"> 
+        </div>
+        
+    </footer>
+    
+</div>
+    
+</body>
+</html>
